@@ -1,53 +1,262 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+<html lang="en">
 
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen" />     
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css' />
+    <!-- Bootstrap --> <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Angular JS --> <script src="js/angular.min.js"></script>
+    <!-- Jquery --> <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- Jquery Mobile --> <link rel="stylesheet" href="css/jquery.mobile.min.css">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    
+<title>India Brasil - App Store</title>
+</head>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>India Brasil Store</h1>
-            <div id="deviceready" class="blink"> <br/><br/><br/>
-                <p class="event listening">Connecting...</p>
-                <p class="event received">It is working! \o/</p>
-            </div>
-        </div>
-        
+<body id="all-home" class="app">
+
+<div id="header-in" class="content">
+ <div class="width row">
+
+    <div class="social col-xs-5">
+      <div class="header-social-icons">
+        <a target="_blank" href="https://www.facebook.com/" class="socicon socicon-facebook"></a>
+        <a target="_blank" href="https://twitter.com/" class="socicon socicon-twitter"></a>
+        <a target="_blank" href="https://plus.google.com/" class="socicon socicon-googleplus"></a>
+        <a target="_blank" href="https://pinterest.com//" class="socicon socicon-instagram"></a>
+      </div>
+    </div>
+
+    <div class="logo col-xs-3"><a href="prod2.html"><img src="images/logo2.png" /></a></div>
 
 
+    <div class="cart col-xs-2">
+      <a href="cart.php"><img src="images/ico_cart.png" /><span></span></a>
+    </div>
+
+    <div class="login col-xs-2"><a href="logout.php"><img src="images/ico_logout.png" /><span></span></a>
+      <!--<<div id="login-box">
+        <a href="login.php" class="signin">Sign in</a><br/>
+        <a href="login.php" class="newcustomers">New customers</a>
+      </div>-->
+    </div>
+
+
+  </div>
+</div>
+     
+<div id="content" class="container">
+
+    <divdiv ng-app="myApp" ng-controller="myCtrl" id="product-list">
+
+    <div class="row">
+      <div class="col-sm-6 col-xs-12 dropdown btn">
+        <form id="options">
+          <h2>Select a list of products:</h2>
+          <select ng-model="disp" class="form-control dropdown-toggle" ng-init="disp='all'">
+            <option value="all">All</option>
+            <option value="incense">Incense</option>
+            <option value="holders">Holders</option>
+            <option value="candles">Candles</option>
+            <option value="oil">Oil & Misc </option>
+            <option value="others">Others</option>    
+          </select>
+        </form>
+      </div>
+    </div>
+
+  <div id="products-list">
+    <div ng-switch="disp" class="row">
+        <div ng-switch-when="all" class="all col-sm-12 col-xs-12">
+          <h2>All Procucts</h2>
+          <ul>
+            <li class="col-sm-6 col-xs-12" ng-repeat="x in myData">
+                <a href="product.php?itemid={{x.ItemID}}" class="item">
+                  <img src="{{x.ImageURL}}" />
+                  <div class="color">
+                    <h4>{{x .Title}}</h4>
+                    <h5><b>Category:</b> {{x .Category | uppercase }}</h5>
+                    <p><b>Description: </b> {{x .Description | limitTo: 95 }}...</p>
+                    <h4 class="price">Price: US$ {{x.Price}}</h4>
+                    <a href="cart.php?id={{x.ItemID}}" class='add btn btn-success' role='button'>Add to cart</a>
+                  </div>
+                </a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+   
+  <div id="products-list">
+    <div ng-switch="disp" class="row">
+        <div ng-switch-when="incense" class="incense col-sm-12 col-xs-12">
+          <h2>Incense</h2>
+          <ul>
+            <li class="col-sm-6 col-xs-12" ng-repeat="x in myData | filter:disp">
+                <a href="product.php?itemid={{x.ItemID}}" class="item">
+                  <img src="{{x.ImageURL}}" />
+                  <div class="color">
+                    <h4>{{x .Title}}</h4>
+                    <h5><b>Category:</b> {{x .Category | uppercase }}</h5>
+                    <p><b>Description: </b> {{x .Description | limitTo: 95 }}...</p>
+                    <h4 class="price">Price: US$ {{x.Price}}</h4>
+                    <a href="cart.php?id={{x.ItemID}}" class='add btn btn-success' role='button'>Add to cart</a>
+                  </div>
+                </a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+    
+  <div id="products-list">
+    <div ng-switch="disp" class="row">
+        <div ng-switch-when="holders" class="holders col-sm-12 col-xs-12">
+          <h2>Holders</h2>
+          <ul>
+            <li class="col-sm-6 col-xs-12" ng-repeat="x in myData | filter:disp">
+                <a href="product.php?itemid={{x.ItemID}}" class="item">
+                  <img src="{{x.ImageURL}}" />
+                  <div class="color">
+                    <h4>{{x .Title}}</h4>
+                    <h5><b>Category:</b> {{x .Category | uppercase }}</h5>
+                    <p><b>Description: </b> {{x .Description | limitTo: 95 }}...</p>
+                    <h4 class="price">Price: US$ {{x.Price}}</h4>
+                    <a href="cart.php?id={{x.ItemID}}" class='add btn btn-success' role='button'>Add to cart</a>
+                  </div>
+                </a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+
+
+  <div id="products-list">
+    <div ng-switch="disp" class="row">
+        <div ng-switch-when="candles" class="candles col-sm-12 col-xs-12">
+          <h2>Candles</h2>
+          <ul>
+            <li class="col-sm-6 col-xs-12" ng-repeat="x in myData | filter:disp">
+                <a href="product.php?itemid={{x.ItemID}}" class="item">
+                  <img src="{{x.ImageURL}}" />
+                  <div class="color">
+                    <h4>{{x .Title}}</h4>
+                    <h5><b>Category:</b> {{x .Category | uppercase }}</h5>
+                    <p><b>Description: </b> {{x .Description | limitTo: 95 }}...</p>
+                    <h4 class="price">Price: US$ {{x.Price}}</h4>
+                    <a href="cart.php?id={{x.ItemID}}" class='add btn btn-success' role='button'>Add to cart</a>
+                  </div>
+                </a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+    
+  <div id="products-list">
+    <div ng-switch="disp" class="row">
+        <div ng-switch-when="oil" class="oil col-sm-12 col-xs-12">
+          <h2>Oil & Misc</h2>
+          <ul>
+            <li class="col-sm-6 col-xs-12" ng-repeat="x in myData | filter:disp">
+                <a href="product.php?itemid={{x.ItemID}}" class="item">
+                  <img src="{{x.ImageURL}}" />
+                  <div class="color">
+                    <h4>{{x .Title}}</h4>
+                    <h5><b>Category:</b> {{x .Category | uppercase }}</h5>
+                    <p><b>Description: </b> {{x .Description | limitTo: 95 }}...</p>
+                    <h4 class="price">Price: US$ {{x.Price}}</h4>
+                    <a href="cart.php?id={{x.ItemID}}" class='add btn btn-success' role='button'>Add to cart</a>
+                  </div>
+                </a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+
+  <div id="products-list">
+    <div ng-switch="disp" class="row">
+      <div ng-switch-when="others" class="others col-sm-12 col-xs-12">
+        <h2>Others</h2>
+          <ul>
+            <li class="col-sm-6 col-xs-12" ng-repeat="x in myData | filter:disp">
+                <a href="product.php?itemid={{x.ItemID}}" class="item">
+                  <img src="{{x.ImageURL}}" />
+                  <div class="color">
+                    <h4>{{x .Title}}</h4>
+                    <h5><b>Category:</b> {{x .Category | uppercase }}</h5>
+                    <p><b>Description: </b> {{x .Description | limitTo: 95 }}...</p>
+                    <h4 class="price">Price: US$ {{x.Price}}</h4>
+                    <a href="cart.php?id={{x.ItemID}}" class='add btn btn-success' role='button'>Add to cart</a>
+                  </div>
+                </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="footer" class="container">
+ <div class="width">
+    <div class="row">
+      <div id="payment" class="col-xs-12">
+          <img src="images/payment.png" />
+      </div>
+
+      <div id="address" class="col-xs-12">
+          Address: My Company, 4578 Marmora<br/> 
+          Road Glasgow D04 89GR<br/>
+          Call us now:  1-800-223-8217<br/>
+          E-mail:<a href="mailto:contact@india-brasil.com"> contact@india-brasil.com</a>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div id="copyright">® Copyright - All Rights Reserved | India Brasil - <a href="index.php"> www.india-brasil.com </a><a href="admin_login.php"> ® </a></div>
+    </div>
+  
+  </div>
+
+</div>
+
+<!-- javascript -->
+<script src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+
+function OpenSearch() {
+  search = document.getElementById('SearchBox');
+  search.classList.add('searchopen');
+}
+
+function CloseSearch() {
+  search = document.getElementById('SearchBox');
+  search.classList.remove('searchopen');
+}
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("http://renatarocha.com/indiabrasil/json.php").then(function (response) {
+      $scope.myData = response.data.products;
+  });
+});
+
+$filter('uppercase')();
+
+
+</script>
 
 
 
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+</body>
 </html>
