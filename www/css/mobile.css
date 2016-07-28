@@ -50,7 +50,7 @@ body {
     font-size: 14px;
     margin: 0 auto;
     padding: 0;
-    max-width: 411px;
+    max-width: 100%;
 }
 
 /* ************************** Header in and out login ***************************** */
@@ -872,8 +872,6 @@ body {
 }
 
 
-
-
 /* **************** all-home page AngularJS ********************* */
 
 #all-home #products-list .all li .color{
@@ -905,8 +903,6 @@ body {
   background-color: #385c9d;
   color: #fff;  
 }
-
-
 
 
 /* **************** Cart page ********************* */
