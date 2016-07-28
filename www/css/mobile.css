@@ -50,7 +50,7 @@ body {
     font-size: 14px;
     margin: 0 auto;
     padding: 0;
-    width: 100%;
+    max-width: 411px;
 }
 
 /* ************************** Header in and out login ***************************** */
