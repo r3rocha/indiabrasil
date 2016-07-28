@@ -1,7 +1,7 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.renatarocha.example" version="1.0.0">
-  <name>Example</name>
-  <description>Testing build.</description>
-  <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.renatarocha.indiabrasil" version="1.0.0">
+  <name>India Brasil Store</name>
+  <description>Store selling incenses</description>
+  <author href="http://renatarocha.com" email="renata@renatarocha.com">India Brasil Team</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="default"/>
