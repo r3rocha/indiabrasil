@@ -1,0 +1,968 @@
+/*
+Store: IndiaBrasil
+Author: Renata Pereira Rocha Moreira
+Student ID: 511324
+Author URI: http://www.india-brasil.com/
+Version: 2016
+
+This project is part of the grade of the WMM 615 class
+
+*/
+
+
+/* ************************** basic ***************************** */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+
+img {
+  border: 0;
+}
+
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+
+b,
+strong {
+  font-weight: bold;
+}
+
+footer,
+header,
+menu {
+  display: block;
+}
+
+
+/* ************************** BODY ***************************** */
+
+body {
+    color: #444;
+    font-family: 'Lato';
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+/* ************************** Header in and out login ***************************** */
+
+#header-in {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    background: #f1f1f1;
+    background: -webkit-linear-gradient(#fff, #eeeeee); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fff, #eeeeee); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fff, #eeeeee); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fff, #eeeeee); /* Standard syntax */
+
+}
+
+#header-in .width {
+    width: 100%;
+    margin: 0px auto 0px;
+}
+
+.cart {
+  float: right;
+}
+
+.login {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* social */
+
+.social {
+    padding: 24px 0px 4px 0px;
+}
+
+
+.socicon {
+    background: transparent;
+    color: #aaa;
+    padding: 2% 3% 0%;
+    display: inline;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+}
+
+.socicon:hover {
+  opacity:0.8;
+  color:#333;
+  text-decoration:none;
+}
+
+@font-face {
+  font-family: "socicon";
+  src:url("fonts/socicon.eot");
+  src:url("fonts/socicon.eot?#iefix") format("embedded-opentype"),
+    url("fonts/socicon.woff") format("woff"),
+    url("fonts/socicon.ttf") format("truetype"),
+    url("fonts/socicon.svg#socicon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "socicon" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="socicon-"]:before,
+[class*=" socicon-"]:before {
+  font-family: "socicon" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.socicon-twitter:before {
+    content: "\e040";
+}
+.socicon-facebook:before {
+    content: "\e041";
+}
+.socicon-googleplus:before {
+    content: "\e042";
+}
+.socicon-instagram:before {
+    content: "\e043";
+} 
+
+/* ************************** Login client ***************************** */
+
+
+
+.login {
+    float: right;
+    padding: 20px 10px 13px 30px;
+    font: normal 18px 'Lato';
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.login img {
+    margin: -5px 7px 0px 0px;
+}
+
+.login a {
+    text-decoration: none;
+    color: #7a7a7a;
+  }
+
+#login-box {
+    width: 0;
+    visibility: hidden;
+    transition-duration: 1.0s;
+    font: normal 75% 'Lato';
+    padding: 5%;
+    background: #ffffff;
+    width: 59%;
+    float: left;
+}
+
+
+
+.login #login-box.loginhopen {
+    width: 200px;
+    visibility: visible;
+}
+
+
+
+/* ************************** My Cart ***************************** */
+
+
+
+.cart {
+    float: right;
+    padding: 20px 10px 13px 30px;
+    font: normal 18px 'Lato';
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.cart img {
+    margin: -5px 7px 0px 0px;
+}
+
+.cart a {
+    text-decoration: none;
+    color: #7a7a7a;
+  }
+
+
+
+
+/* ************************** Header menu ***************************** */
+
+.logo {
+  width: auto;
+  padding: 10px;
+  display: inline-block;
+
+}
+.logo img {
+    vertical-align: super;
+    max-width: 100%;
+}
+
+
+
+/* *********** menu color pages **************** */
+
+#about #menu li.about span, 
+#about #menu li.about span:hover {
+  background-color:  #385c9d;
+}
+
+#about #menu li.about a {
+  color:  #385c9d;
+}
+
+
+#incense #menu li.incense span, 
+#incense #menu li.incense span:hover {
+  background-color:  #f27421;
+}
+
+#incense #menu li.incense a {
+  color:  #f27421;
+}
+
+#holders #menu li.holders span, 
+#holders #menu li.holders span:hover {
+  background-color:  #e23325;
+}
+
+#holders #menu li.holders a {
+  color:  #e23325;
+}
+
+
+#candles #menu li.candles span, 
+#candles #menu li.candles span:hover {
+  background-color:  #f27421;
+}
+
+#candles #menu li.candles a {
+  color:  #f27421;
+}
+
+#oil #menu li.oil span, 
+#oil #menu li.oil span:hover {
+  background-color:  #3fa547;
+}
+
+#oil #menu li.oil a {
+  color:  #3fa547;
+}
+
+#others #menu li.others span, 
+#others #menu li.others span:hover {
+  background-color:  #385c9d;
+}
+
+#others #menu li.others a {
+  color:  #385c9d;
+}
+
+#all #menu li.all span, 
+#all #menu li.all span:hover {
+  background-color:  #385c9d;
+}
+
+#all-home #menu li.all-home span, 
+#all-home #menu li.all-home span:hover {
+  background-color:  #3fa547;
+}
+
+#others #menu li.all a {
+  color:  #385c9d;
+}
+
+
+
+/* ************************** slide ***************************** */
+
+#slide {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+#slide ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+#slide li {
+      list-style: none;
+      display: none;
+      padding: 0px;
+}
+#slide li:first-child {
+      display: block;
+}
+
+#slide a {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  z-index: 154;
+  display: block;
+}
+
+#slide a img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+#slide span {
+  background: rgba(56,92,157,0.8);
+  padding: 10px;
+  color: #fff;
+  font: normal 40px 'Poiret One';
+  z-index: 155;
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+}
+#slide #buttons {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+}
+
+#slide button#prev {
+  background: url('images/prev.png') no-repeat center center transparent;
+  border: none;
+  color: transparent;
+  height: 42px;
+  width: 42px;
+  /*position: relative;*/
+  /*top: -50px;*/
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  float: left;
+}
+
+#slide button#next {
+  background: url('images/next.png') no-repeat center center transparent;
+  border: none;
+  color: transparent;
+  height: 42px;
+  width: 42px;
+  /*position: relative;*/
+  /*top: -50px;*/
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  float: right;
+}
+
+
+
+/* ************************** content ***************************** */
+
+
+#content {
+    /*max-width: 1160px;*/
+    margin: 0px auto 0px;
+}
+#admin #content {
+  padding: 53px 0px 0px 0px;
+}  
+
+/* **************** Home galery ********************* */
+
+#home-products {
+    margin: 0px auto 40px;
+}
+
+#home-products ul {
+  padding: 0px;
+  margin: 0;
+  width: 100%;
+}
+
+
+#home-products li {
+  display: inline-block;
+}
+
+#home-products a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font: normal 18px 'Lato';
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+#home-products h4 {
+  font: normal 28px 'Poiret One';
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+  padding: 48px 0px 0px 0px;
+}
+
+#home-products p {
+  text-align: center;
+}
+
+
+#home-products .item img {
+  display: inline-block;
+  width: 280px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+      vertical-align: middle;
+    float: left;
+    width: 50%;
+}
+
+
+#home-products li .color {
+    display: inline-block;
+    width: 50%;
+    height: 280px;
+    vertical-align: top;
+    padding: 20px;
+    float: right;
+  }
+
+#home-products li .itemone .color {
+  background-color: #e23325; 
+}
+
+
+#home-products li .itemtwo .color {
+  background-color: #f27421; 
+}
+
+#home-products li .itemthree .color {
+  background-color: #3fa547; 
+}
+
+#home-products li .itemfour .color {
+  background-color: #385c9d; 
+}
+
+#home-products li a:hover {
+  opacity: 0.8; 
+}
+
+#home-products .plus {
+  font-size: 35px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 35px;
+  text-align: center;
+  margin: 0 auto 0px;
+  padding: 0;
+  line-height: 35px;
+  position: relative;
+  bottom: -26px;
+}
+
+#home-products .col-xs-12,
+#home-products .col-sm-6, 
+#home-products .col-md-6 {
+  padding: 0px;
+}
+
+
+/* ************************** footer ***************************** */
+
+
+#footer {
+    width: 100%;
+    margin: 0px auto 0px;
+    border-top: 1px solid #848484;
+}
+
+#footer .width {
+    margin: 20px auto 20px;
+    font: normal 14px 'Lato';
+    text-transform: uppercase;
+    color: #898989; 
+}
+
+#footer a {
+    text-decoration: none;
+    color: #898989;
+    display: block;
+}
+
+#footer a:hover {
+  color: #385c9d;
+}
+
+#payment {
+    display: inline-block;
+}
+
+#address {
+    display: inline-block;
+    line-height: 30px;
+}
+
+#address a {
+    display: inline;
+}
+
+#copyright {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+    max-width: 100%;
+}
+
+#copyright a {
+  display: inline;
+} 
+
+
+/* ************************** About us text ***************************** */
+
+#about-text h2 {
+  font: normal 38px 'Poiret One';
+  color: #444;
+}
+
+#about-text p {
+  font: normal 16px 'Lato';
+  color: #444;
+  line-height: 24px;
+  text-align: justify;
+}
+
+#about-text img {
+  float: right;
+  margin: 0px 0px 20px 20px;
+  display: block;
+}
+
+
+
+
+/* ************************** Product page text ***************************** */
+
+
+#product-text h2 {
+  font: normal 38px 'Poiret One';
+  color: #444;
+}
+
+#product-text p {
+  font: normal 16px 'Lato';
+  color: #444;
+  line-height: 24px;
+  text-align: justify;
+}
+
+#product-text img {
+    width: 100%;
+    margin: 0px 20px 20px 0px;
+    display: block;
+    border: 1px solid #848484;
+}
+
+
+#product-text #price {
+    font: normal 30px 'Poiret One';
+    color: #385c9d;
+    float: left;
+    font-weight: bolder;
+    margin: 30px 0px 0px 0px;
+}
+
+#product-text #addcart {
+    float: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 39px 0px 0px 10px;
+}
+
+#product-text #addcart a {
+    text-decoration: none;
+    padding: 10px 13px 10px 35px;
+    border-radius: 6px;
+    color: #ffffff;
+    background: url('images/ico_cartadd.png') no-repeat 5px 3px #385c9d;
+}
+
+#product-text #addcart a:hover {
+    background-color: #f27421;
+}
+
+#product-text h3 {
+  font: normal 27px 'Poiret One';
+  color: #444;
+}
+
+#product-text ul {
+  padding: 0;
+  margin: 0;
+}
+
+#product-text span {    
+    height: 30px;
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+    font: normal 22px 'Poiret One';
+    color: #444;
+    padding: 6px 0px 35px 35px;
+}
+
+#product-text span#description {
+  background: url('images/p-icons-desc.png') no-repeat transparent;
+  border-bottom: 3px solid #f27421 !important;
+}
+
+#product-text span#ingredient {
+  background: url('images/p-icons-ingred.png') no-repeat transparent;
+  border-bottom: 3px solid #35a16d !important;
+}
+
+#product-text span#instrucion {
+  background: url('images/p-icons-inst.png') no-repeat transparent;
+  border-bottom: 3px solid #4975b9 !important;
+}
+
+#product-text .nav-tabs {
+    border-bottom: 1px solid #385c9d;
+}
+
+#product-text .nav-tabs > li.active > a, 
+#product-text .nav-tabs > li.active > a:hover, 
+#product-text .nav-tabs > li.active > a:focus {
+    border: 1px solid #385c9d;
+    border-bottom-color: transparent !important;
+}
+
+#product-text .tab-content {
+    border-left: 1px solid #385c9d;
+    border-right: 1px solid #385c9d;
+    border-bottom: 1px solid #385c9d;
+    padding: 10px 15px 10px 15px;
+}
+
+/* **************** Products list ********************* */
+
+#products-list form#options {
+    padding-bottom: 6px;
+}
+
+#products-list {
+    margin: 0px auto;
+}
+
+#products-list ul {
+  padding: 0px;
+  margin: 0;
+}
+
+
+#products-list li {
+    display: inline;
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+}
+
+#products-list a {
+    display: inline;
+    text-decoration: none;
+    color: #ffffff;
+    font: normal 18px 'Lato';
+    font-weight: 300;
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    max-width: 100%;
+}
+
+
+
+#products-list .item img {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #aaaaaa;
+}
+
+#products-list li img {
+    width: 100%;
+}
+
+
+#products-list li .color {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+    padding: 20px 20px 33px;
+    color: #ffffff;
+}
+
+#products-list li .colors {
+    display: block;
+    width: 99.4%;
+    height: auto;
+    vertical-align: top;
+    padding: 20px;
+    color: #ffffff;
+}    
+
+       
+#products-list h2 {
+  font: normal 28px 'Poiret One';
+  color: #000000;
+  text-transform: none;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  padding: 0px 0px 6px 0px;
+}
+
+#products-list h2 a {
+  color: #000000;
+  font: normal 28px 'Poiret One';
+}
+
+#product-list #options h2 {
+    color: #000000;
+    font: normal 23px 'lato';
+    text-align: center;
+    font-weight: 300;
+}
+
+#products-list h4 {
+  font: normal 28px 'Poiret One';
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  padding: 0px 0px 0px 0px;
+}
+
+#products-list h4.price {
+    text-align: right;
+    margin: 15px 24px 0px 0px;
+    float: left;
+    font: normal 17px 'Lato';
+}
+
+#product-list .color a.add.btn.btn-success {
+    font-size: 14px;
+    padding: 5px;
+    position: relative;
+    top: 12px;
+    right: 0px;
+}
+
+#products-list p {
+  text-align: left;
+  -webkit-margin-before: 0.5em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+
+#oil #products-list li .item .colors {
+  background-color: #3fa547; 
+}
+
+#incense #products-list li .item .colors {
+  background-color: #f27421; 
+}
+
+#candles #products-list li .item .colors {
+  background-color: #f27421; 
+}
+
+#holders #products-list li .item .colors {
+  background-color: #e23325; 
+}
+
+#others #products-list li .item .colors {
+  background-color: #385c9d; 
+}
+
+#products-list li a:hover {
+  opacity: 0.8; 
+}
+
+#products-list .plus {
+    font-size: 23px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 21px;
+    text-align: center;
+    padding: 0;
+    line-height: 7px;
+    margin: -24px 0px 0px 0px;
+    float: right;
+    padding: 0px 0px 14px 0px;
+}
+
+/* **************** all-home + bootstrap ********************* */
+
+
+#products-list #box {
+    margin: 40px auto 40px;
+    padding: 20px;
+    border: 0px solid #ccc;
+    height: auto;
+    width: 30%;
+    border-radius: 13px;
+    text-align: center;
+    font-weight: 100;
+}
+
+#products-list h3 {
+    font: normal 1.7em 'Lato';
+    color: #777;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#products-list #title {
+    float: left;
+    margin: 27px 0px 0px 0px;
+}
+
+
+
+
+/* **************** all-home page AngularJS ********************* */
+
+#all-home #products-list .all li .color{
+  background-color: #385c9d;
+  color: #fff; 
+}
+
+#all-home #products-list .oil li .color {
+  background-color: #3fa547;
+  color: #fff;  
+}
+
+#all-home #products-list .incense li .color {
+  background-color: #f27421;
+  color: #fff;  
+}
+
+#all-home #products-list .candles li .color {
+  background-color: #f27421;
+  color: #fff;  
+}
+
+#all-home #products-list .holders li .color {
+  background-color: #e23325;
+  color: #fff;  
+}
+
+#all-home #products-list .others li .color {
+  background-color: #385c9d;
+  color: #fff;  
+}
+
+
+
+
+/* **************** Cart page ********************* */
+
+#shopping-cart h2 {
+  font: normal 20px 'Poiret One';
+  color: #444;
+  text-transform: uppercase;
+}
+
+#shopping-cart .empty .bottom {
+  float: right;
+}
+
+#shopping-cart input.btn.btn-primary.btn-xs.change {
+    margin: 4px 0px 0px 0px;
+}
+
+#shopping-cart input.form-control.input-sm {
+    text-align: center;
+}
+
+
+/* ******************************** Product list home.php ************************************* */
+
+
+#products-all h3 {
+    font: normal 1.7em 'Poiret One';
+    color: #777;
+    text-transform: uppercase;
+}
+
+#products-all h3:hover {
+    color: #337ab7 !important;
+}
+
+#products-all a {
+    color: #777;
+}
+
+#products-all a:hover {
+    outline: none;
+    text-decoration: none;
+    color: #337ab7 !important;
+}
+
+#products-all a.btn {
+    color: #fff;
+}
+
+#products-all a.btn:hover {
+    color: #fff !important;
+}
+
+#products-all #addproduct .col-xs-12.col-md-8 {
+    float: none !important;
+    margin: 0 auto !important;
+}
+
