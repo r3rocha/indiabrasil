@@ -59,11 +59,14 @@ body {
     width: 100%;
     border-bottom: 1px solid #cccccc;
     background: #f1f1f1;
-    background: -webkit-linear-gradient(#fff, #eeeeee); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#fff, #eeeeee); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#fff, #eeeeee); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#fff, #eeeeee); /* Standard syntax */
-
+    background: -webkit-linear-gradient(#fff, #eeeeee);
+    background: -o-linear-gradient(#fff, #eeeeee);
+    background: -moz-linear-gradient(#fff, #eeeeee);
+    background: linear-gradient(#fff, #eeeeee);
+    position: fixed;
+    height: 63px;
+    z-index: 999;
+    margin: 0px 0px 10px;
 }
 
 #header-in .width {
@@ -313,97 +316,13 @@ body {
 
 
 
-/* ************************** slide ***************************** */
-
-#slide {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  position: relative;
-}
-
-#slide ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-#slide li {
-      list-style: none;
-      display: none;
-      padding: 0px;
-}
-#slide li:first-child {
-      display: block;
-}
-
-#slide a {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  z-index: 154;
-  display: block;
-}
-
-#slide a img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-}
-
-#slide span {
-  background: rgba(56,92,157,0.8);
-  padding: 10px;
-  color: #fff;
-  font: normal 40px 'Poiret One';
-  z-index: 155;
-  position: absolute;
-  bottom: 10%;
-  left: 20%;
-}
-#slide #buttons {
-  width: 70%;
-  margin: 0 auto;
-  position: relative;
-  top: -100px;
-}
-
-#slide button#prev {
-  background: url('images/prev.png') no-repeat center center transparent;
-  border: none;
-  color: transparent;
-  height: 42px;
-  width: 42px;
-  /*position: relative;*/
-  /*top: -50px;*/
-  padding: 0;
-  margin: 0;
-  box-sizing: content-box;
-  float: left;
-}
-
-#slide button#next {
-  background: url('images/next.png') no-repeat center center transparent;
-  border: none;
-  color: transparent;
-  height: 42px;
-  width: 42px;
-  /*position: relative;*/
-  /*top: -50px;*/
-  padding: 0;
-  margin: 0;
-  box-sizing: content-box;
-  float: right;
-}
-
-
 
 /* ************************** content ***************************** */
 
 
 #content {
-    /*max-width: 1160px;*/
-    margin: 0px auto 0px;
+    /* max-width: 1160px; */
+    margin: 43px auto 0px;
 }
 #admin #content {
   padding: 53px 0px 0px 0px;
