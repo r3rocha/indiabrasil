@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" 
-  xmlns:cdv="http://cordova.apache.org/ns/1.0"
+  xmlns:gap="http://phonegap.com/ns/1.0"
   id="com.renatarocha.indiabrasil" 
   versionCode="1" 
   version="1.0.0" 
@@ -24,7 +24,7 @@
   <preference name="auto-hide-splash-screen" value="true"/>
   <preference name="disable-cursor" value="false"/>
   <preference name="android-minSdkVersion" value="14"/>
-
+  <gap:plugin name="cordova-plugin-whitelist" source="npm" />
   <gap:plugin name="org.apache.cordova.battery-status"/>
   <gap:plugin name="org.apache.cordova.camera"/>
   <gap:plugin name="org.apache.cordova.media-capture"/>
